@@ -1,14 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from 'react';
 import { lungCancerApi } from '@/lib/api';
 
-interface ChatContext {
-  concise?: boolean;
-  educational?: boolean;
-  prediction?: string;
-  confidence?: number;
-  analysis?: any;
-  chatHistory?: Array<{ role: 'user' | 'assistant'; content: string }>;
-}
 
 interface ChatMessage {
   message: string;

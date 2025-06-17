@@ -13,6 +13,11 @@ export default function LandingPage() {
   const [displayedText, setDisplayedText] = useState("");
   const [displayedSubText, setDisplayedSubText] = useState("");
   const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   useEffect(() => {
     let i = 0;
@@ -32,15 +37,15 @@ export default function LandingPage() {
             setIsTypingComplete(true);
           }
         }, 30);
-        
+
       }
     }, 50);
 
     return () => {
-        clearInterval(typingInterval);
+      clearInterval(typingInterval);
     };
   }, []);
-
+  if(isClient)
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-950 via-blue-900 to-black overflow-hidden">
       <Header />
